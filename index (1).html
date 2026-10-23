@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071426">
+
+<title>ONE UNITY | Live Team Scoreboard</title>
+
+<style>
+:root {
+    --navy: #071426;
+    --navy-light: #102442;
+    --gold: #f4c76a;
+    --gold-light: #fff0bc;
+    --white: #ffffff;
+    --muted: #a9b8ca;
+    --green: #75e0b1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--white);
+    background:
+        radial-gradient(ellipse at 50% 0%, #20375a 0%, transparent 48%),
+        linear-gradient(145deg, #040b16, #0b1c34 55%, #040b16);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .18;
+    background-image:
+        radial-gradient(#f4c76a 0.7px, transparent 0.7px);
+    background-size: 28px 28px;
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+    width: min(1050px, 92%);
+    margin: auto;
+    padding: 35px 0 30px;
+}
+
+.top-label {
+    text-align: center;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.header {
+    text-align: center;
+    padding: 24px 0 18px;
+}
+
+.crown {
+    font-size: 44px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 15px #f4c76a55);
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 5vw, 47px);
+    font-weight: 500;
+    letter-spacing: 3px;
+    line-height: 1.25;
+}
+
+h1 span {
+    color: var(--gold);
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.gold-line {
+    width: 110px;
+    height: 2px;
+    margin: 22px auto;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* SCOREBOARD */
+
+.scoreboard {
+    position: relative;
+    max-width: 760px;
+    margin: 15px auto 30px;
+    padding: 28px 20px 32px;
+    text-align: center;
+    border: 1px solid #d5ad5d99;
+    border-radius: 22px;
+    background:
+        linear-gradient(145deg, #172c48dd, #081528f5);
+    box-shadow:
+        0 0 0 5px #d7b15b0a,
+        0 20px 65px #0008,
+        inset 0 0 35px #f4c76a08;
+    overflow: hidden;
+}
+
+.scoreboard::before,
+.scoreboard::after {
+    content: "✦";
+    position: absolute;
+    color: var(--gold);
+    font-size: 22px;
+    opacity: .7;
+}
+
+.scoreboard::before {
+    top: 18px;
+    left: 20px;
+}
+
+.scoreboard::after {
+    top: 18px;
+    right: 20px;
+}
+
+.score-label {
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+.score {
+    margin: 10px 0 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(100px, 22vw, 190px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -5px;
+    background: linear-gradient(
+        180deg,
+        #fff8d9 0%,
+        #f9d986 27%,
+        #dca43c 65%,
+        #fff0b0 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 5px 18px #e6b84a32);
+}
+
+.score-caption {
+    font-size: clamp(17px, 3vw, 24px);
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+
+.score-caption span {
+    color: var(--gold);
+}
+
+.score-divider {
+    width: 70%;
+    height: 1px;
+    margin: 23px auto;
+    background: linear-gradient(90deg, transparent, #f4c76a99, transparent);
+}
+
+.achievement {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 18px;
+    border: 1px solid #75e0b144;
+    border-radius: 50px;
+    color: var(--green);
+    background: #75e0b10a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.achievement-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 12px var(--green);
+}
+
+/* TEAM CARDS */
+
+.section-title {
+    margin: 35px 0 18px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.section-title span {
+    color: var(--gold);
+}
+
+.teams {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.team-card {
+    position: relative;
+    padding: 25px 12px 23px;
+    text-align: center;
+    border: 1px solid #d5ad5d55;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #132743, #09172a);
+    transition: transform .3s, border-color .3s, box-shadow .3s;
+    animation: rise .8s both;
+}
+
+.team-card:nth-child(2) {
+    animation-delay: .15s;
+}
+
+.team-card:nth-child(3) {
+    animation-delay: .3s;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 35px #0005;
+}
+
+.team-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 15px;
+    border: 1px solid #f4c76a77;
+    border-radius: 50%;
+    color: var(--gold);
+    background: #f4c76a0b;
+    font-size: 25px;
+}
+
+.team-name {
+    color: var(--white);
+    font-size: clamp(16px, 3vw, 23px);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.team-status {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+/* TEAMWORK MESSAGE */
+
+.message {
+    margin: 30px 0 15px;
+    padding: 25px 15px;
+    text-align: center;
+    border-top: 1px solid #f4c76a33;
+    border-bottom: 1px solid #f4c76a33;
+}
+
+.message h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.message h2 span {
+    color: var(--gold);
+}
+
+.message p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+}
+
+.footer {
+    padding: 15px 0 5px;
+    text-align: center;
+    color: #8092a9;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.footer strong {
+    display: block;
+    margin-top: 9px;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 520px) {
+    .page {
+        width: 94%;
+        padding-top: 25px;
+    }
+
+    .teams {
+        gap: 8px;
+    }
+
+    .team-card {
+        padding: 20px 5px;
+    }
+
+    .team-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .team-name {
+        letter-spacing: 1px;
+    }
+
+    .scoreboard {
+        padding: 28px 10px;
+    }
+
+    .score-label {
+        letter-spacing: 3px;
+    }
+
+    .score-caption {
+        letter-spacing: 3px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+    <div class="top-label">
+        Excellence • Unity • Achievement
+    </div>
+
+    <header class="header">
+        <div class="crown">♛</div>
+
+        <h1>
+            TEAM <span>EXCELLENCE</span>
+        </h1>
+
+        <p class="subtitle">
+            THREE TEAMS · ONE SHARED ACHIEVEMENT
+        </p>
+
+        <div class="gold-line"></div>
+    </header>
+
+    <section class="scoreboard" aria-label="Combined team achievement">
+        <div class="score-label">
+            OUR COMBINED ACHIEVEMENT
+        </div>
+
+        <div class="score" id="score">107</div>
+
+        <div class="score-caption">
+            <span>CONVERSATIONS</span>
+        </div>
+
+        <div style="margin-top:16px;color:var(--muted);font-size:14px;letter-spacing:1px;">
+            TARGET: <strong id="target" style="color:var(--gold-light);">125</strong>
+        </div>
+        <div id="lastUpdated" style="margin-top:9px;color:var(--muted);font-size:11px;">Connecting to shared scoreboard…</div>
+        <div id="connectionStatus" role="status" style="margin-top:8px;color:var(--green);font-size:11px;">Checking live score…</div>
+
+        <div class="score-divider"></div>
+
+        <div class="achievement">
+            <span class="achievement-dot"></span>
+            MILESTONE ACHIEVED
+        </div>
+    </section>
+
+    <h2 class="section-title">
+        United in <span>Success</span>
+    </h2>
+
+    <section class="teams" aria-label="Participating teams">
+
+        <article class="team-card">
+            <div class="team-icon">◉</div>
+            <div class="team-name">TTS</div>
+            <p class="team-status">
+                TEAM CONTRIBUTOR<br>
+                UNITED IN EXCELLENCE
+            </p>
+        </article>
+
+        <article class="team-card">
+            <div class="team-icon">♛</div>
+            <div class="team-name">PRATHAM</div>
+            <p class="team-status">
+                TEAM CONTRIBUTOR<br>
+                UNITED IN EXCELLENCE
+            </p>
+        </article>
+
+        <article class="team-card">
+            <div class="team-icon">✧</div>
+            <div class="team-name">HHC</div>
+            <p class="team-status">
+                TEAM CONTRIBUTOR<br>
+                UNITED IN EXCELLENCE
+            </p>
+        </article>
+
+    </section>
+
+    <section class="message">
+        <h2>
+            Together We <span>Achieve More.</span>
+        </h2>
+
+        <p>
+            ONE TEAM &nbsp; • &nbsp;
+            ONE VISION &nbsp; • &nbsp;
+            ONE SUCCESS
+        </p>
+    </section>
+
+    <footer class="footer">
+        RECOGNISING THE POWER OF TEAMWORK
+
+        <strong>
+            TTS &nbsp; | &nbsp; PRATHAM &nbsp; | &nbsp; HHC
+        </strong>
+    </footer>
+
+</main>
+
+<script>
+/* ONE UNITY shared scoreboard
+   1) Deploy your Google Apps Script as a Web App.
+   2) Paste its /exec URL below.
+   3) Update the Scoreboard sheet (A2=Score, B2=Target).
+   The page refreshes from the shared sheet every 10 seconds.
+*/
+const SCORE_API = "PASTE_YOUR_APPS_SCRIPT_EXEC_URL_HERE";
+const scoreElement = document.getElementById("score");
+const targetElement = document.getElementById("target");
+const updatedElement = document.getElementById("lastUpdated");
+const statusElement = document.getElementById("connectionStatus");
+let currentScore = Number(scoreElement.textContent) || 107;
+let requestNumber = 0;
+
+function animateToScore(nextScore) {
+    const from = Number(scoreElement.textContent) || 0;
+    const duration = 900;
+    let started = null;
+    function step(timestamp) {
+        if (started === null) started = timestamp;
+        const progress = Math.min((timestamp - started) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        scoreElement.textContent = Math.round(from + (nextScore - from) * eased);
+        if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+}
+
+function loadSharedScore() {
+    if (!SCORE_API || SCORE_API.includes("PASTE_YOUR_APPS_SCRIPT")) {
+        statusElement.textContent = "Setup needed: add your Apps Script /exec URL.";
+        statusElement.style.color = "#f4c76a";
+        return;
+    }
+
+    const callback = "unityScoreCallback";
+    const requestId = ++requestNumber;
+    window[callback] = function(data) {
+        if (requestId !== requestNumber) return;
+        if (!data || !data.ok) {
+            statusElement.textContent = "Could not load the shared score. Check your Apps Script deployment.";
+            statusElement.style.color = "#ffb4a8";
+            return;
+        }
+        const nextScore = Number(data.score) || 0;
+        const nextTarget = Number(data.target) || 125;
+        if (nextScore !== currentScore) {
+            animateToScore(nextScore);
+            currentScore = nextScore;
+        }
+        targetElement.textContent = nextTarget;
+        updatedElement.textContent = data.updatedAt ? "Last updated: " + data.updatedAt : "Score loaded from Google Sheets";
+        statusElement.textContent = "LIVE • Shared scoreboard connected";
+        statusElement.style.color = "var(--green)";
+    };
+
+    const oldScript = document.getElementById("unityScoreRequest");
+    if (oldScript) oldScript.remove();
+    const script = document.createElement("script");
+    script.id = "unityScoreRequest";
+    script.src = SCORE_API + "?callback=" + callback + "&t=" + Date.now();
+    script.onerror = function() {
+        statusElement.textContent = "Connection failed. Check the Apps Script URL and deployment access.";
+        statusElement.style.color = "#ffb4a8";
+    };
+    document.body.appendChild(script);
+}
+
+loadSharedScore();
+setInterval(loadSharedScore, 10000);
+</script>
+
+</body>
+</html>
