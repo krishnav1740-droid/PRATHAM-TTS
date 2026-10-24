@@ -3,68 +3,507 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b0b">
-<meta name="description" content="A cinematic housewarming invitation from Rajendran & Govindamma — 1 November 2026, Chittapara.">
-<title>A New Chapter Begins | Rajendran &amp; Govindamma</title>
+<meta name="theme-color" content="#071426">
+
+<title>107 Conversations | Team Excellence</title>
+
 <style>
-:root{--night:#080b0b;--night2:#101817;--gold:#d8b568;--gold2:#f7e2a4;--cream:#fff4d9;--muted:#c7c0ae}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--night);color:var(--cream);font-family:Georgia,'Times New Roman',serif;overflow:hidden}button,a{font:inherit}
-#stars,#embers{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:2}.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff3c7;opacity:.5;animation:twinkle 3s infinite alternate}.ember{position:absolute;bottom:-15px;width:3px;height:3px;border-radius:50%;background:var(--gold2);box-shadow:0 0 10px var(--gold);animation:rise linear infinite}
-@keyframes twinkle{to{opacity:1;transform:scale(1.8)}}@keyframes rise{to{transform:translateY(-110vh) translateX(30px);opacity:0}}
-.top{position:fixed;z-index:20;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(16px,4vw,48px);border-bottom:1px solid #d8b56835;background:linear-gradient(#080b0bdc,transparent);font: .72rem Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}.logo{color:var(--gold2)}.top button{border:1px solid #d8b56877;background:#ffffff08;color:var(--cream);border-radius:30px;padding:9px 13px;font-size:.7rem;letter-spacing:.1em}
-.scene{position:absolute;inset:0;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:80px 22px 85px;opacity:0;visibility:hidden;transform:scale(1.035);transition:opacity 1s ease,transform 1.4s ease,visibility 1s}.scene.active{opacity:1;visibility:visible;transform:scale(1)}
-.backdrop{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,#20342c 0%,#0b1110 48%,#050707 100%);overflow:hidden}.backdrop:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0008,transparent 25%,transparent 75%,#0008),linear-gradient(0deg,#050707 0%,transparent 40%,#050707aa 100%)}.backdrop:after{content:"";position:absolute;left:-20%;right:-20%;bottom:-32%;height:70%;border-radius:50%;border-top:1px solid #d8b56850;box-shadow:0 -20px 90px #d8b5680b}
-.content{position:relative;z-index:4;width:min(900px,100%);text-align:center}.eyebrow{font: .68rem Arial,sans-serif;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);line-height:1.8}.title{font-weight:normal;font-size:clamp(2.5rem,8vw,6.7rem);line-height:.98;letter-spacing:-.045em;margin:24px 0;color:var(--cream);text-shadow:0 8px 50px #000}.title em{color:var(--gold2);font-weight:normal}.subtitle{color:var(--muted);font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.8;max-width:620px;margin:0 auto}.goldline{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);margin:25px auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin:12px 5px 0;padding:14px 23px;border:1px solid var(--gold);background:transparent;color:var(--cream);text-decoration:none;text-transform:uppercase;letter-spacing:.13em;font: .7rem Arial,sans-serif;transition:.3s;cursor:pointer}.btn.primary{background:var(--gold);color:#11150f}.btn:hover{transform:translateY(-3px);box-shadow:0 0 30px #d8b56824}
-.door-stage{width:min(390px,80vw);height:min(300px,54vw);min-height:220px;margin:25px auto 22px;position:relative;perspective:1100px;filter:drop-shadow(0 20px 50px #000)}.doorframe{position:absolute;inset:0 12%;border:4px solid #9c7133;border-bottom:0;box-shadow:0 0 0 2px #f3d98b24,0 0 50px #d8b56820}.door{position:absolute;top:8%;bottom:0;width:50%;background:linear-gradient(100deg,#29170c,#754520 25%,#3a2111 65%,#170e08);border:2px solid #b28b4a;box-shadow:inset 0 0 0 5px #130c08,inset 0 0 0 7px #a87b39;transition:transform 2.3s cubic-bezier(.2,.75,.2,1)}.door.left{left:0;transform-origin:left}.door.right{right:0;transform-origin:right}.door:before{content:"";position:absolute;inset:12%;border:1px solid #c8a05c88;box-shadow:inset 0 0 0 7px #0003}.door:after{content:"";position:absolute;top:50%;width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 12px var(--gold2)}.door.left:after{right:12px}.door.right:after{left:12px}.door-stage.open .door.left{transform:rotateY(-105deg)}.door-stage.open .door.right{transform:rotateY(105deg)}.door-glow{position:absolute;inset:12% 28% 0;background:radial-gradient(ellipse,#f8d986 0%,#d29a3b44 28%,transparent 70%);opacity:0;transition:opacity 1.5s}.door-stage.open .door-glow{opacity:1}
-.horizon{position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(0deg,#040605,#15271c 55%,transparent);clip-path:polygon(0 100%,0 75%,8% 69%,18% 75%,28% 59%,39% 72%,52% 58%,64% 69%,77% 55%,89% 70%,100% 60%,100% 100%)}.house{position:relative;width:min(410px,75vw);height:200px;margin:22px auto 15px;filter:drop-shadow(0 0 40px #d8b56818)}.roof{position:absolute;top:10px;left:7%;width:86%;height:100px;background:linear-gradient(130deg,#b18a43,#f2d38a,#6d4a1d);clip-path:polygon(50% 0,100% 75%,92% 75%,50% 22%,8% 75%,0 75%)}.housebody{position:absolute;bottom:0;left:15%;right:15%;height:115px;border:2px solid #a57a3d;background:linear-gradient(90deg,#18231c,#26382b,#101713);box-shadow:inset 0 0 25px #000}.housebody:before{content:"";position:absolute;left:39%;right:39%;bottom:0;height:82%;border:2px solid #b68b47;background:linear-gradient(90deg,#2b180c,#73451e,#241308)}.window{position:absolute;bottom:40px;width:42px;height:42px;border:2px solid var(--gold);background:#f2ce7c66;box-shadow:0 0 25px #e7c16b88}.window.one{left:20%}.window.two{right:20%}
-.details{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:30px auto;max-width:700px;border-top:1px solid #d8b56866;border-bottom:1px solid #d8b56866}.detail{padding:20px 8px;border-right:1px solid #d8b56855}.detail:last-child{border:0}.detail span{display:block;font: .65rem Arial,sans-serif;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}.detail strong{font-size:clamp(1rem,3vw,1.5rem);font-weight:normal}.countdown{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:20px 0}.time{min-width:66px;padding:10px;border:1px solid #d8b56850;background:#ffffff05}.time b{display:block;font-size:1.5rem;color:var(--gold2);font-weight:normal}.time small{font: .58rem Arial,sans-serif;letter-spacing:.13em;color:var(--muted)}
-.final-card{border:1px solid #d8b568a8;outline:1px solid #d8b56830;outline-offset:8px;padding:clamp(24px,5vw,48px);background:linear-gradient(145deg,#17221b8c,#0a0d0bd9);max-width:680px;margin:0 auto}.names{font-size:clamp(2rem,6vw,4rem);font-style:italic;color:var(--gold2);line-height:1.15}.scene-no{position:fixed;bottom:25px;left:clamp(16px,4vw,48px);z-index:20;font: .65rem Arial,sans-serif;letter-spacing:.2em;color:#c5bda8}.nav{position:fixed;bottom:15px;right:clamp(16px,4vw,48px);z-index:20;display:flex;align-items:center;gap:12px}.nav button{background:#101714bb;border:1px solid #d8b56866;color:var(--cream);width:42px;height:42px;border-radius:50%;font-size:1rem}.nav button:disabled{opacity:.25}.navdots{display:flex;gap:6px}.navdots button{width:5px;height:5px;border:0;padding:0;background:#8e8c7d;border-radius:50%}.navdots button.on{background:var(--gold2);box-shadow:0 0 10px var(--gold)}
-#musicInput{display:none}.hint{font: .65rem Arial,sans-serif;color:#a8a28f;letter-spacing:.08em;margin-top:25px}
-@media(max-width:560px){.top{padding:14px}.logo{font-size:.62rem;letter-spacing:.14em}.top button{padding:8px;font-size:.6rem}.scene{padding:75px 18px 85px}.title{font-size:clamp(2.7rem,13vw,4.4rem)}.details{margin:22px auto}.detail{padding:16px 4px}.detail span{font-size:.55rem}.door-stage{min-height:205px}.scene-no{bottom:24px;font-size:.58rem}.nav{bottom:12px;gap:8px}.nav button{width:36px;height:36px}.navdots{gap:5px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+:root {
+    --navy: #071426;
+    --navy-light: #102442;
+    --gold: #f4c76a;
+    --gold-light: #fff0bc;
+    --white: #ffffff;
+    --muted: #a9b8ca;
+    --green: #75e0b1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--white);
+    background:
+        radial-gradient(ellipse at 50% 0%, #20375a 0%, transparent 48%),
+        linear-gradient(145deg, #040b16, #0b1c34 55%, #040b16);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .18;
+    background-image:
+        radial-gradient(#f4c76a 0.7px, transparent 0.7px);
+    background-size: 28px 28px;
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+    width: min(1050px, 92%);
+    margin: auto;
+    padding: 35px 0 30px;
+}
+
+.top-label {
+    text-align: center;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.header {
+    text-align: center;
+    padding: 24px 0 18px;
+}
+
+.crown {
+    font-size: 44px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 15px #f4c76a55);
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 5vw, 47px);
+    font-weight: 500;
+    letter-spacing: 3px;
+    line-height: 1.25;
+}
+
+h1 span {
+    color: var(--gold);
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.gold-line {
+    width: 110px;
+    height: 2px;
+    margin: 22px auto;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* SCOREBOARD */
+
+.scoreboard {
+    position: relative;
+    max-width: 760px;
+    margin: 15px auto 30px;
+    padding: 28px 20px 32px;
+    text-align: center;
+    border: 1px solid #d5ad5d99;
+    border-radius: 22px;
+    background:
+        linear-gradient(145deg, #172c48dd, #081528f5);
+    box-shadow:
+        0 0 0 5px #d7b15b0a,
+        0 20px 65px #0008,
+        inset 0 0 35px #f4c76a08;
+    overflow: hidden;
+}
+
+.scoreboard::before,
+.scoreboard::after {
+    content: "✦";
+    position: absolute;
+    color: var(--gold);
+    font-size: 22px;
+    opacity: .7;
+}
+
+.scoreboard::before {
+    top: 18px;
+    left: 20px;
+}
+
+.scoreboard::after {
+    top: 18px;
+    right: 20px;
+}
+
+.score-label {
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+.score {
+    margin: 10px 0 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(100px, 22vw, 190px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -5px;
+    background: linear-gradient(
+        180deg,
+        #fff8d9 0%,
+        #f9d986 27%,
+        #dca43c 65%,
+        #fff0b0 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 5px 18px #e6b84a32);
+}
+
+.score-caption {
+    font-size: clamp(17px, 3vw, 24px);
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+
+.score-caption span {
+    color: var(--gold);
+}
+
+.score-divider {
+    width: 70%;
+    height: 1px;
+    margin: 23px auto;
+    background: linear-gradient(90deg, transparent, #f4c76a99, transparent);
+}
+
+.achievement {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 18px;
+    border: 1px solid #75e0b144;
+    border-radius: 50px;
+    color: var(--green);
+    background: #75e0b10a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.achievement-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 12px var(--green);
+}
+
+/* TEAM CARDS */
+
+.section-title {
+    margin: 35px 0 18px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.section-title span {
+    color: var(--gold);
+}
+
+.teams {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.team-card {
+    position: relative;
+    padding: 25px 12px 23px;
+    text-align: center;
+    border: 1px solid #d5ad5d55;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #132743, #09172a);
+    transition: transform .3s, border-color .3s, box-shadow .3s;
+    animation: rise .8s both;
+}
+
+.team-card:nth-child(2) {
+    animation-delay: .15s;
+}
+
+.team-card:nth-child(3) {
+    animation-delay: .3s;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 35px #0005;
+}
+
+.team-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 15px;
+    border: 1px solid #f4c76a77;
+    border-radius: 50%;
+    color: var(--gold);
+    background: #f4c76a0b;
+    font-size: 25px;
+}
+
+.team-name {
+    color: var(--white);
+    font-size: clamp(16px, 3vw, 23px);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.team-status {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+/* TEAMWORK MESSAGE */
+
+.message {
+    margin: 30px 0 15px;
+    padding: 25px 15px;
+    text-align: center;
+    border-top: 1px solid #f4c76a33;
+    border-bottom: 1px solid #f4c76a33;
+}
+
+.message h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.message h2 span {
+    color: var(--gold);
+}
+
+.message p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+}
+
+.footer {
+    padding: 15px 0 5px;
+    text-align: center;
+    color: #8092a9;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.footer strong {
+    display: block;
+    margin-top: 9px;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 520px) {
+    .page {
+        width: 94%;
+        padding-top: 25px;
+    }
+
+    .teams {
+        gap: 8px;
+    }
+
+    .team-card {
+        padding: 20px 5px;
+    }
+
+    .team-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .team-name {
+        letter-spacing: 1px;
+    }
+
+    .scoreboard {
+        padding: 28px 10px;
+    }
+
+    .score-label {
+        letter-spacing: 3px;
+    }
+
+    .score-caption {
+        letter-spacing: 3px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
 </style>
 </head>
+
 <body>
-<div id="stars"></div><div id="embers"></div>
-<header class="top"><div class="logo">KRISHNOVA <span style="color:#fff8e6">/ INVITATIONS</span></div><button id="musicBtn">♫ MUSIC OFF</button></header>
-<section class="scene active" data-title="The Opening">
- <div class="backdrop"></div><div class="content"><div class="eyebrow">An invitation to a beautiful new beginning</div><h1 class="title">A New<br><em>Chapter</em><br>Begins.</h1><div class="goldline"></div><p class="subtitle">Some moments deserve more than an invitation.<br>They deserve to be experienced.</p><button class="btn primary" id="openDoors">Enter the story&nbsp; ↗</button><div class="hint">SOUND OPTIONAL · BEST EXPERIENCED FULL SCREEN</div></div>
-</section>
-<section class="scene" data-title="The Reveal">
- <div class="backdrop"><div class="horizon"></div></div><div class="content"><div class="eyebrow">Every home holds a thousand dreams</div><div class="door-stage" id="doorStage"><div class="door-glow"></div><div class="door left"></div><div class="door right"></div><div class="doorframe"></div></div><h2 class="title" style="font-size:clamp(2rem,6vw,4rem)">Come, step into<br><em>our new home.</em></h2><p class="subtitle">With grateful hearts, we open our doors to family, friends and your precious blessings.</p><button class="btn" id="continueReveal">Continue the journey →</button></div>
-</section>
-<section class="scene" data-title="The Hosts">
- <div class="backdrop"></div><div class="content"><div class="eyebrow">With great joy and gratitude</div><h2 class="title" style="font-size:clamp(2rem,6vw,4.7rem)">You are warmly<br><em>invited</em></h2><div class="goldline"></div><p class="subtitle">Please join us as we celebrate the housewarming ceremony of</p><div class="names">Rajendran<br>&amp; Govindamma</div><p class="subtitle" style="margin-top:22px">Your presence will make this auspicious day even more special.</p><button class="btn primary" id="toDetails">Discover the details ↓</button></div>
-</section>
-<section class="scene" data-title="The Celebration">
- <div class="backdrop"></div><div class="content"><div class="eyebrow">The day · The time · The place</div><h2 class="title" style="font-size:clamp(2.5rem,7vw,5rem)">The <em>Celebration</em></h2><div class="house"><div class="roof"></div><div class="housebody"><div class="window one"></div><div class="window two"></div></div></div><div class="details"><div class="detail"><span>DATE</span><strong>1 Nov 2026</strong></div><div class="detail"><span>TIME</span><strong>4–6 PM</strong></div><div class="detail"><span>LOCATION</span><strong>Chittapara</strong></div></div><div class="countdown" id="countdown"><div class="time"><b>--</b><small>DAYS</small></div><div class="time"><b>--</b><small>HOURS</small></div><div class="time"><b>--</b><small>MINUTES</small></div><div class="time"><b>--</b><small>SECONDS</small></div></div><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Chittapara" target="_blank" rel="noopener">⌖ Open Maps</a><button class="btn" id="calendarBtn">＋ Save Date</button></div>
-</section>
-<section class="scene" data-title="A Blessing">
- <div class="backdrop"></div><div class="content"><div class="eyebrow">A home is built with love</div><div style="font-size:clamp(3rem,10vw,6rem);color:var(--gold2);text-shadow:0 0 35px #d8b56877">✧</div><h2 class="title" style="font-size:clamp(2.5rem,7vw,5rem)">Bring your<br><em>blessings.</em></h2><div class="goldline"></div><p class="subtitle">May this home be filled with peace, prosperity, laughter and love. We would be honoured to celebrate this milestone with you.</p><button class="btn primary" id="blessBtn">Send a blessing ♡</button><p id="blessText" class="subtitle" hidden style="color:var(--gold2);margin-top:18px">Your good wishes will always have a place in our home. Thank you. ♡</p></div>
-</section>
-<section class="scene" data-title="The Invitation">
- <div class="backdrop"></div><div class="content"><div class="final-card"><div class="eyebrow">With love · With gratitude · With blessings</div><h2 class="title" style="font-size:clamp(2.5rem,7vw,5rem);margin:22px 0">You Are<br><em>Invited</em></h2><div class="goldline"></div><p class="subtitle">Housewarming Ceremony of</p><div class="names">Rajendran &amp;<br>Govindamma</div><p class="subtitle" style="margin-top:22px"><strong style="color:var(--gold2);font-weight:normal">Sunday, 1 November 2026</strong><br>4:00 PM – 6:00 PM<br>Chittapara</p><p class="subtitle" style="font-size:1rem;margin-top:20px">We look forward to your gracious presence and blessings.</p></div><button class="btn primary" id="shareBtn">↗ Share invitation</button><button class="btn" id="printBtn">Print / Save PDF</button><div class="hint">MADE WITH WARMTH BY KRISHNOVA</div></div>
-</section>
-<div class="scene-no" id="sceneNo">SCENE 01 / 06</div><nav class="nav"><div class="navdots" id="navdots"></div><button id="prev" aria-label="Previous scene" disabled>←</button><button id="next" aria-label="Next scene">→</button></nav>
-<input type="file" id="musicInput" accept="audio/*"><audio id="audio" loop></audio>
+
+<main class="page">
+
+    <div class="top-label">
+        Excellence • Unity • Achievement
+    </div>
+
+    <header class="header">
+        <div class="crown">♛</div>
+
+        <h1>
+            TEAM <span>EXCELLENCE</span>
+        </h1>
+
+        <p class="subtitle">
+            THREE TEAMS · ONE SHARED ACHIEVEMENT
+        </p>
+
+        <div class="gold-line"></div>
+    </header>
+
+    <section class="scoreboard" aria-label="Combined team achievement">
+        <div class="score-label">
+            OUR COMBINED ACHIEVEMENT
+        </div>
+
+        <div class="score" id="score">107</div>
+
+        <div class="score-caption">
+            <span>CONVERSATIONS</span>
+        </div>
+
+        <div class="score-divider"></div>
+
+        <div class="achievement">
+            <span class="achievement-dot"></span>
+            MILESTONE ACHIEVED
+        </div>
+    </section>
+
+    <h2 class="section-title">
+        United in <span>Success</span>
+    </h2>
+
+    <section class="teams" aria-label="Participating teams">
+
+        <article class="team-card">
+            <div class="team-icon">◉</div>
+            <div class="team-name">TTS</div>
+            <p class="team-status">
+                TEAM CONTRIBUTOR<br>
+                UNITED IN EXCELLENCE
+            </p>
+        </article>
+
+        <article class="team-card">
+            <div class="team-icon">♛</div>
+            <div class="team-name">PRATHAM</div>
+            <p class="team-status">
+                TEAM CONTRIBUTOR<br>
+                UNITED IN EXCELLENCE
+            </p>
+        </article>
+
+        <article class="team-card">
+            <div class="team-icon">✧</div>
+            <div class="team-name">HHC</div>
+            <p class="team-status">
+                TEAM CONTRIBUTOR<br>
+                UNITED IN EXCELLENCE
+            </p>
+        </article>
+
+    </section>
+
+    <section class="message">
+        <h2>
+            Together We <span>Achieve More.</span>
+        </h2>
+
+        <p>
+            ONE TEAM &nbsp; • &nbsp;
+            ONE VISION &nbsp; • &nbsp;
+            ONE SUCCESS
+        </p>
+    </section>
+
+    <footer class="footer">
+        RECOGNISING THE POWER OF TEAMWORK
+
+        <strong>
+            TTS &nbsp; | &nbsp; PRATHAM &nbsp; | &nbsp; HHC
+        </strong>
+    </footer>
+
+</main>
+
 <script>
-const scenes=[...document.querySelectorAll('.scene')],dots=document.getElementById('navdots');let index=0;
-scenes.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Go to scene '+(i+1));b.addEventListener('click',()=>go(i));dots.appendChild(b)});
-function go(i){index=Math.max(0,Math.min(scenes.length-1,i));scenes.forEach((s,n)=>s.classList.toggle('active',n===index));[...dots.children].forEach((d,n)=>d.classList.toggle('on',n===index));document.getElementById('prev').disabled=index===0;document.getElementById('next').disabled=index===scenes.length-1;document.getElementById('sceneNo').textContent=`SCENE ${String(index+1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}`;if(index===1)setTimeout(()=>document.getElementById('doorStage').classList.add('open'),300);if(index!==1)document.getElementById('doorStage').classList.remove('open')}
-document.getElementById('prev').onclick=()=>go(index-1);document.getElementById('next').onclick=()=>go(index+1);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(index+1);if(e.key==='ArrowLeft')go(index-1)});
-document.getElementById('openDoors').onclick=()=>go(1);document.getElementById('continueReveal').onclick=()=>go(2);document.getElementById('toDetails').onclick=()=>go(3);
-for(let i=0;i<70;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';document.getElementById('stars').appendChild(s)}
-for(let i=0;i<24;i++){let e=document.createElement('i');e.className='ember';e.style.left=Math.random()*100+'%';e.style.animationDuration=(7+Math.random()*12)+'s';e.style.animationDelay=(-Math.random()*15)+'s';document.getElementById('embers').appendChild(e)}
-const target=new Date('2026-11-01T16:00:00+05:30').getTime();function tick(){let d=target-Date.now();let vals=d<=0?[0,0,0,0]:[Math.floor(d/86400000),Math.floor(d%86400000/3600000),Math.floor(d%3600000/60000),Math.floor(d%60000/1000)];[...document.querySelectorAll('#countdown b')].forEach((b,i)=>b.textContent=String(vals[i]).padStart(2,'0'))}tick();setInterval(tick,1000);
-document.getElementById('blessBtn').onclick=()=>{document.getElementById('blessText').hidden=false;document.getElementById('blessBtn').textContent='Blessing sent ♡'};
-async function share(){const text='You are warmly invited to the Housewarming Ceremony of Rajendran & Govindamma on Sunday, 1 November 2026, from 4 PM to 6 PM at Chittapara. We look forward to your presence and blessings!';if(navigator.share){try{await navigator.share({title:'Housewarming Ceremony',text,url:location.href});return}catch(e){if(e.name==='AbortError')return}}try{await navigator.clipboard.writeText(text+' '+location.href);alert('Invitation text and website link copied. Paste it into WhatsApp to share.')}catch(e){prompt('Copy this invitation:',text+' '+location.href)}}
-document.getElementById('shareBtn').onclick=share;document.getElementById('printBtn').onclick=()=>window.print();
-document.getElementById('calendarBtn').onclick=()=>{const ics='BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//KRISHNOVA//Housewarming//EN\nBEGIN:VEVENT\nUID:krishnova-housewarming-20261101@example.invalid\nDTSTAMP:20261020T000000Z\nDTSTART:20261101T103000Z\nDTEND:20261101T123000Z\nSUMMARY:Housewarming Ceremony - Rajendran & Govindamma\nLOCATION:Chittapara\nEND:VEVENT\nEND:VCALENDAR';let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='Housewarming.ics';a.click();URL.revokeObjectURL(a.href)};
-const audio=document.getElementById('audio'),input=document.getElementById('musicInput'),mb=document.getElementById('musicBtn');let playing=false;mb.onclick=()=>{if(!audio.src){input.click();return}if(playing){audio.pause();playing=false;mb.textContent='♫ MUSIC OFF'}else audio.play().then(()=>{playing=true;mb.textContent='♫ MUSIC ON'}).catch(()=>{})};input.onchange=()=>{if(input.files[0]){audio.src=URL.createObjectURL(input.files[0]);audio.play().then(()=>{playing=true;mb.textContent='♫ MUSIC ON'}).catch(()=>{})}};
+/* Animated count from zero to the verified total */
+const scoreElement = document.getElementById("score");
+const targetScore = 107;
+const duration = 1600;
+let started = null;
+
+function animateScore(timestamp) {
+    if (started === null) started = timestamp;
+
+    const progress = Math.min(
+        (timestamp - started) / duration,
+        1
+    );
+
+    // Smooth ease-out animation
+    const eased = 1 - Math.pow(1 - progress, 4);
+
+    scoreElement.textContent = Math.floor(eased * targetScore);
+
+    if (progress < 1) {
+        requestAnimationFrame(animateScore);
+    } else {
+        scoreElement.textContent = targetScore;
+    }
+}
+
+requestAnimationFrame(animateScore);
 </script>
-<style>
-@media print{body{overflow:visible;background:#080b0b}.top,.nav,.scene-no,#stars,#embers,.btn,.hint{display:none!important}.scene{position:relative;display:none!important;opacity:1!important;visibility:visible!important;transform:none!important;min-height:100vh;page-break-after:always}.scene.active{display:flex!important}}
-</style>
+
 </body>
 </html>
